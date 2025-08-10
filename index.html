@@ -7,9 +7,27 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
 </head>
 <body>
+	<div id="toolbar">
+  <select id="font-select">
+    <option value="Arial">Arial</option>
+    <option value="Verdana">Verdana</option>
+    <option value="Courier New">Courier</option>
+  </select>
+  <input type="color" id="color-picker" value="#0000ff" />
+  <input type="number" id="font-size" value="16" min="10" max="72" />
+</div>
+
   <h1>Editor de PDFs</h1>
+  <div class="top-bar">
+  <button id="toggle-mode">🌙 Modo Oscuro</button>
+</div>
+
   <input type="file" id="file-input" />
   <div>
+  	<input type="text" id="text-input" placeholder="Escribe aquí" style="position:absolute; display:none;" />
+  	<div id="text-layer" style="position:absolute; top:0; left:0;"></div>
+
+
   <button id="prev-page">Anterior</button>
   <span id="page-num">Página 1</span>
   <button id="next-page">Siguiente</button>
@@ -17,5 +35,7 @@
 
   <canvas id="pdf-canvas"></canvas>
   <script src="script.js"></script>
+  <button id="export-img">Exportar como JPG</button>
+
 </body>
 </html>
